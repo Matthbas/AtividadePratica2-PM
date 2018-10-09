@@ -12,23 +12,27 @@ package desafio1;
 public class Circle {
     // variáveis de instancia privadas, isto é, não acessíveis de fora desta classe.
     private double radius = 1.0;
+    private Point center;
     private String color;
     private double perimeter;
     // primeiro construtor o qual atribui valores iniciais a ambos: radius e color.
     public Circle() {
         setPerimeter();
-        color = "red";
+        center = new Point();
+        center.setCoordinates(0, 0);
+        this.color = "red";
     }
     // Segundo construtor que inicia radius com o parâmetro recebido, e matem color com
     //o valor padrão definido.
-    public Circle(double r) {
-        radius = r;
-        setPerimeter(); // cria o objeto com o primeiro construtor:.Circle()
+    public Circle(double radius) {
+        this();
+        this.radius = radius;
+        this.setPerimeter(); // cria o objeto com o primeiro construtor:.Circle()
     }
 
-    public Circle(double r, String c) {
-        radius = r;
-        color = c;
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
     }
 
     public void setColor(String color) {
