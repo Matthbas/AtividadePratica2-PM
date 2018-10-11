@@ -7,6 +7,11 @@ public class Point {
     private float x;
     private float y;
 
+    public Point(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
     void setCoordinates(final int x, final int y) {
         this.x = x;
         this.y = y;
