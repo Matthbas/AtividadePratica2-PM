@@ -6,7 +6,7 @@
 package desafio1;
 
 /**
- * Implementa o Circulo, que herda 
+ * Implementa o Circulo.
  * @author Francisco de Paula Dias Neto
  */
 public class Circle extends Point {
