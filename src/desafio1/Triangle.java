@@ -36,13 +36,39 @@ public class Triangle {
     }
 
     public String getTriagleType() {
-        return "";
+        int compareEdge12 = Double.compare(edge1, edge2);
+        int compareEdge23 = Double.compare(edge2, edge3);
+        int compareEdge13 = Double.compare(edge1, edge3);
+
+        if (compareEdge12 == 0 && compareEdge23 == 0)
+            return "Equilátero.";
+        else if (compareEdge12 == 0 || compareEdge13 == 0 || compareEdge23 == 0) 
+            return "Isosceles.";
+        else
+            return "Escaleno.";
+    }
+
+    public String getInternAngles() {
+        double cousine3 = 
+            (Math.pow(edge1, 2) + Math.pow(edge2, 2) - Math.pow(edge3, 2)) / (2*edge1*edge2);
+        double angle3 = Math.toDegrees(Math.acos(cousine3));
+
+        double cousine2 = 
+            (Math.pow(edge1, 2) + Math.pow(edge3, 2) - Math.pow(edge2, 2)) / (2*edge1*edge3);
+        double angle2 = Math.toDegrees(Math.acos(cousine2));
+
+        double cousine1 = 
+            (Math.pow(edge2, 2) + Math.pow(edge3, 2) - Math.pow(edge1, 2)) / (2*edge2*edge3);
+        double angle1 = Math.toDegrees(Math.acos(cousine1));
+
+        return angle1 + ", " + angle2 + ", " + angle3;
     }
 
     @Override
     public String toString() {
         return "Lados: " + edge1 + ", " + edge2 + ", "  + edge3 + "\n" +
             "Área: " + getArea() + "\n" + "Perimetro: " + getPerimeter() + "\n" +
-            "Tipo do triagulo: " + getTriagleType();
+            "Tipo do triagulo: " + getTriagleType() + "\n" +
+            "Angulos internos: " + getInternAngles();
     }
 }

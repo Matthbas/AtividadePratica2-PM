@@ -42,7 +42,7 @@ public class Main {
         c3.setColor("Red"); // altera color
 
         try {
-            Triangle triangle = new Triangle(3.0, 1.0, 5.0);
+            Triangle triangle = new Triangle(3, 5, 5);
             System.out.print(triangle);
         } catch (Exception ex) {
             System.out.print("O triangulo não pode ser criado, os lados estão errados.");
